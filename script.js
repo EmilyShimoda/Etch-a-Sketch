@@ -72,8 +72,9 @@ function removeGrid() {
 
 function resizeGrid(){
     removeGrid();
-    side = parseInt(prompt("Set the number of squares per side between 1 and 100"));
-    if(side <= 0 || side > 100 || isNaN(side)) {resizeGrid();}
+    do {
+        side = parseInt(prompt("Set the number of squares per side between 1 and 100")); 
+    } while(side <= 0 || side > 100 || isNaN(side));
     createGrid();
     eventListeners();
 }
